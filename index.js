@@ -13,26 +13,39 @@ app.use( express.json() )
 //require route of category 
 const catRoute = require("./router/category.router")
 
-//require route of subcategory
-const subCatRoute = require("./router/subcategory.router")
-
-//require route of user 
-const userRoute = require ('./router/user.router')
-
-//require route of seller
-const sellerRoute = require('./router/seller.router')
-
 //middleware for category api 
 app.use("/category" , catRoute)
+
+//require route of subcategory
+const subCatRoute = require("./router/subcategory.router")
 
 //middleware for subcategory api
 app.use("/subcategory" , subCatRoute)
 
+//require route of user 
+const userRoute = require ('./router/user.router')
+
 //middleware for user api
 app.use("/user" , userRoute)
 
+//require route of seller
+const sellerRoute = require('./router/seller.router')
+
 //middleware for seller api 
 app.use('/seller' , sellerRoute)
+
+//address route for address
+const addressRoute = require('./router/address.router')
+
+//middleware for address api 
+app.use('/address' , addressRoute)
+
+
+
+
+
+
+
 
 //server creation
 app.listen(1007 , (err)=>{

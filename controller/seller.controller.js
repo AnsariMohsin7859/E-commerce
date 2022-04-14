@@ -66,7 +66,7 @@ const getAllSeller = async (req , res )=>{
     )
 }
 
-//get one subcategory info 
+//get one seller info 
 const getSeller =   (req , res )=>{
     let id = req.params.id
     sellerModel.findById(id).then((data)=>{
@@ -98,7 +98,7 @@ const deleteSeller =  (req , res )=>{
         }
     })}
 
-    //update seller name 
+    //update seller details 
 const updateSellerDetails = (req , res , next )=>{
     let Id = req.query.id
     let dataToUpdate = {  name : req.body.name , email : req.body.email , number : req.body.number , shopeName : req.body.shopeName }
@@ -135,10 +135,5 @@ const updateSellerStatus=  (req , res , next )=>{
 }
 
                 
-        
-            
-        
-
-
 //export all controller to other file 
 module.exports = {sendSellerData , getAllSeller , getSeller , deleteSeller , updateSellerDetails , updateSellerStatus}

@@ -32,7 +32,7 @@ const sellerSchema = new Schema({
     },
     address : [{
         type : mongoose.Schema.Types.ObjectId,
-        
+        required : true
     }],
     status : {
         type : Boolean
