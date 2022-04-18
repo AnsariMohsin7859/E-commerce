@@ -122,7 +122,7 @@ const updateSellerStatus=  (req , res , next )=>{
     let status = req.body.status
     let dataToUpdate = { status : status }
     //1 where , 2 set : what to update
-        sellerModel.findOneAndUpdate(  { _id : SellerId } , dataToUpdate , (err , data)=>{
+        sellerModel.findByIdAndUpdate(  { _id : SellerId } , dataToUpdate , (err , data)=>{
             if(err)
         {
             return res.status(400).json({error : err , msg : "Your request could not be processed. Please try again."})

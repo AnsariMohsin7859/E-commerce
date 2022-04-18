@@ -38,7 +38,7 @@ const updateAddress = (req , res)=>{
 
     console.log(dataToUpdate);
     //1 where , 2 set : what to update
-        addressModel.findOneAndUpdate(  { _id : Id } , dataToUpdate , (err , data)=>{
+        addressModel.findByIdAndUpdate(  { _id : Id } , dataToUpdate , (err , data)=>{
             if(err)
         {
             return res.status(400).json({error : err , msg : "Your request could not be processed. Please try again."})

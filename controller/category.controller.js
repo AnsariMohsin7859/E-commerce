@@ -2,7 +2,7 @@ const catModel = require('../model/category.model')
 
 //send data of category to database 
 const sendCatData = (req , res)=>{
-    let cat = req.body.catName;
+    let cat = req.body.name;
     // let catStatus = req.body.status;
     let catCode = req.body.code;
 
