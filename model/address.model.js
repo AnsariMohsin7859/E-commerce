@@ -1,44 +1,52 @@
 // const mongoose = require ('mongoose')
 
-const { default: mongoose } = require('mongoose')
-const { Schema , model } = require('mongoose')
-const { required } = require('nodemon/lib/config')
+const {
+    default: mongoose
+} = require('mongoose')
+const {
+    Schema,
+    model
+} = require('mongoose')
+const {
+    required
+} = require('nodemon/lib/config')
 
 const addressSchema = new Schema({
-    city : {
-        type : String ,
-        required : true,
+    city: {
+        type: String,
+        required: true,
     },
-    pinCode : {
-        type : Number,
-        },
-    area  : {
-        type : String,
-        required : true
-    },landmark:{
-        type : String
+    pinCode: {
+        type: Number,
     },
-    state : {
-        type : String,
+    area: {
+        type: String,
         required: true
     },
-    country : {
-        type : String,
-        required : true
+    landmark: {
+        type: String
     },
-    countryCode  : {
-        type : String , 
-        required : true
+    state: {
+        type: String,
+        required: true
     },
-    isPermanent : {
-        type : Boolean,
-        required : true
+    country: {
+        type: String,
+        required: true
+    },
+    countryCode: {
+        type: String,
+        required: true
+    },
+    isPermanent: {
+        type: Boolean,
+        required: true
     },
 
 })
 
 
 
-let addressModel = model("address" , addressSchema)
+let addressModel = model("address", addressSchema)
 
-module.exports= addressModel
+module.exports = addressModel
