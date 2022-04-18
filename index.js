@@ -34,16 +34,17 @@ const sellerRoute = require('./router/seller.router')
 //middleware for seller api 
 app.use('/seller' , sellerRoute)
 
-//address route for address
+//require route of  address
 const addressRoute = require('./router/address.router')
 
 //middleware for address api 
 app.use('/address' , addressRoute)
 
+//require route of brand
+const brandRoute = require('./router/brand.router')
 
-
-
-
+//middleware for brand api
+app.use('/brand' , brandRoute)
 
 
 
