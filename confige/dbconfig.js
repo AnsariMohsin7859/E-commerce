@@ -1,15 +1,16 @@
-//require mongoose package for daba connection 
+//require mongoose package for daba connection
 const mongoose = require("mongoose");
 
+require("dotenv").config();
 
-//create connection to database 
-let db = mongoose.connect("mongodb://localhost:27017/mern007", {}, (err) => {
-    if (err) {
-        console.log("connectivity error", err);
-    } else {
-        console.log("database connected -- mern007");
-    }
-})
+//create connection to database
+let db = mongoose.connect(process.env.DB_URL, {}, (err) => {
+  if (err) {
+    console.log("connectivity error", err);
+  } else {
+    console.log("database connected");
+  }
+});
 
 // .then((result)=>{
 //     console.log("database connected");
@@ -17,5 +18,5 @@ let db = mongoose.connect("mongodb://localhost:27017/mern007", {}, (err) => {
 //     console.log("connectivity error",err);
 // })
 
-//export database connection to other file 
-module.exports = db
+//export database connection to other file
+module.exports = db;
